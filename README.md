@@ -1,4 +1,4 @@
-# Weight manager
+# [Mathsync](http://mathsync.mais-h.eu) demo app
 
 ## Requirements
 
@@ -10,10 +10,10 @@ Initialize environment with `npm install .` to install [NPM](https://www.npmjs.o
 
 Build with `npm test`, triggers [Grunt](http://gruntjs.com) which
 
-* launches [Mocha](http://visionmedia.github.io/mocha/) tests
 * checks style with [JSHint](http://www.jshint.com/).
+* builds the browser script using [Browserify](http://browserify.org/).
 
-Launch application with `env PORT=8080 npm start`.
+Launch application with `env PORT=4000 npm start`.
 
 ## License
 
