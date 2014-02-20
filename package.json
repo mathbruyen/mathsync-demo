@@ -1,0 +1,25 @@
+{
+  "name": "demoapp",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Demo application",
+  "scripts": {
+    "start": "node --harmony src/index.js",
+    "test": "node --harmony node_modules/.bin/grunt --force"
+  },
+  "author": "Mathieu Bruyen <code@mais-h.eu>",
+  "license": "MIT",
+  "dependencies": {
+    "when": "~2.8.0",
+    "koa": "~0.4.0",
+    "koa-static": "~1.4.3",
+    "koa-route": "1.0.x",
+    "grunt-cli": "~0.1.13",
+    "mathsync-generator": "0.3.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-browserify": "1.2.x"
+  }
+}
