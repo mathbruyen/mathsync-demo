@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var ms = require('mathsync-generator');
+  var ms = require('mathsync');
   var when = require('when');
   var http = require('http');
 
@@ -10,16 +10,6 @@
     var data = {};
     var toPush = [];
     var toDelete = [];
-
-    // Client summary
-    var serialize = ms.serialize.fromString();
-    var local = ms.summarizer.fromGenerator(function* () {
-      for (var k in data) {
-        if (data.hasOwnProperty(k)) {
-          yield (k + ':' + data[k]);
-        }
-      }
-    }, serialize);
 
     // Server summary
     function fetchSummary(level) {
@@ -44,8 +34,15 @@
     var remote = ms.summarizer.fromJSON(fetchSummary);
 
     // Synchronization
+    var serialize = ms.serialize.fromString();
     var deserialize = ms.serialize.toString();
-    var resolve = ms.resolver.fromSummarizers(local, remote, deserialize);
+    var resolve = ms.resolver.fromGenerator(function* () {
+      for (var k in data) {
+        if (data.hasOwnProperty(k)) {
+          yield (k + ':' + data[k]);
+        }
+      }
+    }, remote, serialize, deserialize);
 
     function pushOne(key, value) {
       if (log !== false) {

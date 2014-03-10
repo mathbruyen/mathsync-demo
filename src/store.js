@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var ms = require('mathsync-generator');
+  var ms = require('mathsync');
   var when = require('when');
 
   function startStore(data, web) {

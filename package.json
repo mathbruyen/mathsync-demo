@@ -15,7 +15,7 @@
     "koa-static": "~1.4.3",
     "koa-route": "1.0.x",
     "grunt-cli": "~0.1.13",
-    "mathsync-generator": "0.3.1"
+    "mathsync": "0.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
